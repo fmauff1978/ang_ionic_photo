@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+
+
+    <ion-title>capture</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tire sua foto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container">
+    <strong class="capitalize">Take a nice photo with your camera</strong>
+    <ion-fab vertical="center" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="openCamera">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+
+</ion-content>
