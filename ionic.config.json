@@ -1,0 +1,7 @@
+{
+  "name": "ang_ionic_photo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
