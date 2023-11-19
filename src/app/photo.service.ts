@@ -12,7 +12,7 @@ import { Storage, ref, uploadString, getDownloadURL } from '@angular/fire/storag
 })
 export class PhotoService {
 
-  constructor(private fs: Firestore, private st: Storage) { }
+  constructor() { }
 
   private async getLocation() {
     const location = await Geolocation.getCurrentPosition();
@@ -27,29 +27,17 @@ export class PhotoService {
       source: CameraSource.Camera,
       quality: 100
     });
-    if (cameraPhoto.dataUrl) {
-      await this.savePhoto(cameraPhoto.dataUrl, latitude, longitude);
+
+
+
   
-  
-  }
 }
 
-  private async savePhoto(dataUrl: string, latitude: number, longitude: number) {
-    const name = new Date().getUTCMilliseconds().toString();
-    const storageRef = ref(this.st, name);
-    await uploadString(storageRef, dataUrl, 'data_url');
-    const photoUrl = await getDownloadURL(storageRef);
-    const photoCollection = collection(this.fs, 'photos');
-    await addDoc(photoCollection, {
-      url: photoUrl,
-      lat: latitude,
-      lng: longitude
-    })
-  }
-  
-  
 
- 
+
+
+
+
 
 
 }
