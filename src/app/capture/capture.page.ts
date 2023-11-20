@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { PhotoService } from '../photo.service';
+import { Firestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-capture',
@@ -11,17 +12,20 @@ import { PhotoService } from '../photo.service';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class CapturePage implements OnInit {
+export class CapturePage  {
+
+
 
   constructor(private ps: PhotoService) { }
 
   // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
-  ngOnInit() {
-  }
+
 
   openCamera(){
 
     this.ps.takePhoto();
+    console.log ("clicado");
+
   }
 
 }
